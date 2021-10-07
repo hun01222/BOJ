@@ -10,7 +10,7 @@ void push(int x){
     int child=heapCount;
     int parent=child/2;
 
-    while(child!=1&&heap[child]>heap[parent]){
+    while(child!=1&&heap[child]<heap[parent]){
         swap(heap[child], heap[parent]);
         child=parent;
         parent=child/2;
@@ -28,15 +28,15 @@ int pop(){
     int child=parent*2;
 
     if(child+1<=heapCount)
-        child=(heap[child]>heap[child+1])?child:child+1;
-    
-    while(child<=heapCount&&heap[child]>heap[parent]){
+        child=(heap[child]<heap[child+1])?child:child+1;
+
+    while(child<=heapCount&&heap[child]<heap[parent]){
         swap(heap[child], heap[parent]);
         parent=child;
         child=parent*2;
 
         if(child+1<=heapCount)
-            child=(heap[child]>heap[child+1])?child:child+1;
+            child=(heap[child]<heap[child+1])?child:child+1;
     }
     return root;
 }
@@ -44,7 +44,7 @@ int pop(){
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    
+
     int n, x;
     cin >> n;
     while(n--){
@@ -52,12 +52,10 @@ int main(){
         if(x==0){
             if(heap[1]==0)
                 cout << "0" << "\n";
-            else{
+            else
                 cout << pop() << "\n";
-            }
         }
-        else{
+        else
             push(x);
-        }
     }
 }
