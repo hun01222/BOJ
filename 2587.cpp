@@ -12,5 +12,5 @@ int main(){
     }
     sort(arr, arr+5);
     
-    cout << double(sum)/2 << '\n' << arr[2];
+    cout << double(sum)/5 << '\n' << arr[2];
 }
