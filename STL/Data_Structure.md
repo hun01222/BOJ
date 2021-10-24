@@ -4,4 +4,4 @@
 
 ## deque
 
-- left와 right를 활용하여 크기비교!!
+- left와 right를 활용하여 크기비교
