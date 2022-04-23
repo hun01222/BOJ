@@ -1,22 +1,18 @@
 #include<iostream>
 #include<algorithm>
+#include<cmath>
 using namespace std;
 int arr[500001]={0, };
 
 int main(){
-	int n, sum=0;
+	int n;
+	double sum=0;
 	cin >> n;
 	for(int i=0; i<n; i++){
 		cin >> arr[i];
-		sum+=arr[i];
+		sum+=(double)arr[i];
 	}
 	sort(arr, arr+n);
-	
-	ans_sum=0;
-	if(sum>=0)
-		ans_sum=sum/n;
-	else
-		ans_sum=(sum/n)-1;
 		
 	int mcv=arr[0], cnt=0, start=0, temp=0;
 	for(int i=0; i<n; i++){
@@ -32,5 +28,5 @@ int main(){
 		}
 	}
 	
-	cout << ans_sum << '\n' << arr[n/2] << '\n' << mcv << '\n' << arr[n-1]-arr[0];
+	cout << round(sum/double(n)) << '\n' << arr[n/2] << '\n' << mcv << '\n' << arr[n-1]-arr[0];
 }
