@@ -4,6 +4,7 @@
 using namespace std;
 
 // end -> start
+// asdf s 0 1 안됨
 int main(){
 	string s;
 	int n, temp_start=0, temp_end=0;
