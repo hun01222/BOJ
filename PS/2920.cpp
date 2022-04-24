@@ -9,7 +9,7 @@ int main(){
 	else if(temp==8)
 		type=2;
 	else{
-		cout << "mixed"
+		cout << "mixed";
 		return 0;
 	}
 	
