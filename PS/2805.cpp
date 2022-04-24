@@ -1,33 +1,17 @@
 #include<iostream>
-#include<vector>
-#include<algorithm>
 using namespace std;
 
+long long int arr[1000001]={0, };
+
 int main(){
-    int n, m, temp, sum=0, right, mid, left;
-    vector<int> v;
-
-    cin >> n >> m;
-    for(int i=0; i<n; i++){
-        cin >> temp;
-        v.push_back(temp);
-    }
-    cout << sum;
-
-    while(1){
-        left=0, right=sum, mid=(right+left)/2;
-
-        if(m<sum-(n*mid)){
-            left=mid;
-            mid=(right+left)/2;
-        }
-        else if(0>sum-(n*mid)){
-            right=mid;
-            mid=(right+left)/2;
-        }
-        else{
-            break;
-        }
-    }
-    cout << mid;
+	long long int n, m, high, mid, low=0, temp, max=0;
+	cin >> n >> m;
+	for(int i=0; i<n; i++){
+		cin >> temp;
+		arr[i]=temp;
+		if(temp>max)
+			max=temp;
+	}
+	high=max;
+	
 }
