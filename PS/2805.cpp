@@ -13,4 +13,5 @@ int main(){
 			max=temp;
 	}
 	high=max;
+	
 }
