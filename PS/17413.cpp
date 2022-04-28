@@ -15,6 +15,7 @@ void print(){
 
 int main(){
 	string s;
+	getline(cin, s);
 	cin >> s;
 	int s_size=s.size();
 	bool Istag=false;
