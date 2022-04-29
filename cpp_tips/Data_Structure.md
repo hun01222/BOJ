@@ -5,3 +5,7 @@
 ## deque
 
 - left와 right를 활용하여 크기비교
+
+## map
+
+- 반복문에서 원소 참조 ```for(auto a=map.begin(); a!=map.end(); a++){string name=a->first; float n=a->second;}```
