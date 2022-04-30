@@ -7,6 +7,7 @@ int dp[2][100001]={0, };
 
 int main(){
 	int t;
+	cin >> t;
 	while(t--){
 		int n;
 		cin >> n;
