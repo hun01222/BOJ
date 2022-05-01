@@ -4,6 +4,10 @@
 using namespace std;
 
 int main(){
+	ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	cout.tie(0);
+	
 	list<char> l;
 	string s;
 	cin >> s;
@@ -11,7 +15,7 @@ int main(){
 	for(int i=0; i<s_length; i++){
 		l.push_back(s[i]);
 	}
-	list<int>::iterator iter=l.end();
+	list<char>::iterator iter=l.end();
 	
 	int n;
 	char c;
@@ -34,11 +38,11 @@ int main(){
 			if(iter==l.begin())
 				continue;
 			else
-				iter=l.erase(iter);
+				iter=l.erase(--iter);
 		}
 		else if(c=='P'){
 			cin >> c;
-			l.insert(c);
+			l.insert(iter, c);
 		}
 	}
 	
