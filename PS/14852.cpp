@@ -12,9 +12,9 @@ int main(){
 	cin >> n;
 	
 	for(int i=3; i<=n; i++){
-		dp[i][1]=((dp[i-1][1]+dp[i-3][0])*2)%MOD;
-		dp[i][0]=(dp[i][1]+dp[i-1][0]*2+dp[i-2][0]*3)%MOD;
+		dp[i][1]=(dp[i-1][1]+dp[i-3][0])%MOD;
+		dp[i][0]=(dp[i][1]*2+dp[i-1][0]*2+dp[i-2][0]*3)%MOD;
 	}
-		
+	
 	cout << dp[n][0];
 }
