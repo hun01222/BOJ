@@ -7,10 +7,6 @@
   
   * ```include<bits/stdc++.h>```
 
-## 소수점 표현
-
-```cout << fixed; cout.precision(4); // 소숫점 넷째자리까지 ```
-
 ## test case가 주어지지 않는 경우
 
 ```while(cin >> n)```
