@@ -1,10 +1,11 @@
-## 타입 정의
+## 정의
 
-```typedef long long ll;```
-
-## 상수 정의
-
-```#define mod 9901```
+ * 타입: ```typedef long long ll;```
+ * 상수: ```#define mod 9901```
+ 
+ ### 헤더파일
+  
+  * ```include<bits/stdc++.h>```
 
 ## 소수점 표현
 
@@ -14,6 +15,11 @@
 
 ```while(cin >> n)```
 
-## 배열 한번에 초기화
+## 초기화
 
-```fill(arr, arr+n; 1) // size=n 인 arr을 1로 초기화```
+ * 배열 한번에 초기화: ```fill(arr, arr+n; 1) // size=n 인 arr을 1로 초기화```
+ * 메모리 한번에 초기화: ```memset(dp, -1, sizeof(dp))```
+
+## 포인터 참조
+
+ * call by referecne: ```int &ret=dp[i][j];```
