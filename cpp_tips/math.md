@@ -1,6 +1,8 @@
 ## 소수점 표현
 
-```cout << fixed; cout.precision(4); // 소숫점 넷째자리까지 ```
+```cpp
+cout << fixed; cout.precision(4); // 소숫점 넷째자리까지
+```
 
 ## 절댓값
 
