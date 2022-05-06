@@ -2,13 +2,9 @@
 
  * 공백 포함하여 입력 ``` string s; getline(cin, s);```
  * 개행까지 포함하여 입력 문자 하나만 입력 ```char a; a=cin.git();```
- * 문단이 들어올 때 끝내기 ```	while(1){
-		getline(cin, s);
-		if(s=="")
-			break;
-	}```
+ * 개행 포함하여 입력 ```	while(getline(cin, s)) {}```
  * 버퍼 지우기 ```cin.ignore() // 맨 앞의 문자 하나만 지운다.```
  
- ## ```#include<string>``` 관련 함수
+ ## ```#include<string.h>``` 관련 함수
  
-  * ```!strcmp(s, "a"); // s와 a를 비교 맞으면 0 아니면 1```
+  * ```char s[10]; !strcmp(s, "a"); // s와 a를 비교 맞으면 0 아니면 1```
