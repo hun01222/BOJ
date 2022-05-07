@@ -1,4 +1,4 @@
-## DFS ($_{n}\mathrm{C}_{n/2}$) 일 때
+## DFS (nCn/2) 일 때
 
 ```cpp
 	for(int i=idx; i<n; i++){
@@ -10,4 +10,16 @@
 			team[i]=false;
 		}
 	}
+	
+	// next_permutation 사용
+	#include<algorithm>
+	
+	for(int i=0; i<4; i++)
+		v[i]=1;
+	
+	do{
+		for(int i=0; i<4; i++)
+			cout << v[i] << " ";
+		cout << "\n";
+	}while(next_permutation(v.begin(), v.end()));
 ```
