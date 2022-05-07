@@ -19,3 +19,11 @@
 ## 포인터 참조
 
  * call by referecne: ```int &ret=dp[i][j];```
+ 
+## 순서쌍 정렬
+
+```cpp
+pair<int, int> arr[100];
+sort(arr, arr+n);
+arr[1].first, arr[1].second;
+```
