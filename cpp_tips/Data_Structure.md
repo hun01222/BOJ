@@ -1,3 +1,6 @@
+## vector
+* 함수의 input이 vector인 경우 ```vector<int> &vect // call by reference로 해야 됨```
+
 ## queue
 
 * ``` vector<int> v(0,2) ```와 ``` vector<int> v[2] ``` 는 모두 2차원 백터(벡터의 배열)을 초기화한다.
