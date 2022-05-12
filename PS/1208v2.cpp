@@ -1,31 +1,40 @@
 #include<iostream>
-#include<vector>
-#include<algorithm>
-#include<functional>
+#include<map>
 using namespace std;
 
-vector<int> v;
+int n, s;
+int arr[41];
+map<int, int> m;
+long long cnt;
 
-void DFS(int cnt, int val, int num, vector<int> &vect){
-	if(cnt==num){
-		vect.push_back(val);
+void rs(int mid, int sum){
+	if(mid==n){
+		m[sum]++;
 		return;
 	}
-	DFS(cnt+1, val, num, vect);
-	DFS(cnt+1, val+v[cnt], num, vect);
+	rs(mid+1, sum+arr[mid]);
+	rs(mid+1, sum);
+}
+
+void ls(int st, int sum){
+	if(st==n/2){
+		cnt+=m[s-sum];
+		return;
+	}
+	ls(st+1, sum+arr[st]);
+	ls(st+1, sum);
 }
 
 int main(){
-	int n, s, temp;
 	cin >> n >> s;
-	for(int i=0; i<n; i++){
-		cin >> temp;
-		v.push_back(temp);
-	}
+	for(int i=0; i<n; i++)
+		cin >> arr[i];
 	
-	int half=n/2;
-	vector<int> l, r;
-	DFS(0, 0, half, l);
-	DFS(0, 0, n-half, r);
-	sort(l.begin(), l.end());
+	rs(n/2, 0);
+	ls(0, 0);
+	
+	if(s==0)
+		cout << cnt-1;
+	else
+		cout << cnt;
 }
