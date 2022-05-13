@@ -3,7 +3,6 @@
 #include<vector>
 typedef long long ll;
 using namespace std;
-
 pair<ll, ll> func(ll n){
 	ll two=0, five=0;
 	for(ll i=2; i<=n; i*=2)

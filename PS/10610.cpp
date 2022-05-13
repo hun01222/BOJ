@@ -1,19 +1,25 @@
 #include<iostream>
-typedef long long ll;
+#include<string>
+#include<algorithm>
+#include<functional>
 using namespace std;
 
 int main(){
-	ll s, sum;
-	int n=1;
+	string s;
 	cin >> s;
 	
-	while(1){
-		sum+=n;
-		if(sum>s){
-			n--;
-			break;
-		}
-		n++;
+	long long sum=0;
+	bool zero=false;
+	for(int i=0; i<s.size(); i++){
+		sum+=(s[i]-'0');
+		if(s[i]-'0'==0)
+			zero=true;
 	}
-	cout << n;
+	
+	if(sum%3||zero==false)
+		cout << -1;
+	else{
+		sort(s.begin(), s.end(), greater<>());
+		cout << s;
+	}
 }
