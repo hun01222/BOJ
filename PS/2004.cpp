@@ -21,5 +21,4 @@ int main(){
 	v.push_back(func(n));
 	v.push_back(func(m));
 	v.push_back(func(n-m));
-	cout << min(v[0].first-v[1].first-v[2].first, v[0].second-v[1].second-v[2].second);
-}
+	cout << min(v[0].first-v[1].first-v[2].first, v[0].second-v[1].second-v[2].sec
