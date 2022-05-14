@@ -5,3 +5,7 @@
 ## dijkstra
   
 * priority_queue 사용 최소힙 구현
+
+## 내림차순 sorting
+
+* ```#include<fuctional> sort(v.begin(), v.end(), greater<>());```
