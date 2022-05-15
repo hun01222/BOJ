@@ -18,6 +18,13 @@ q.front().x; // 참조
 q.push({x, y, z}); // 삽입
 ```
 
+* 우선순위 큐(절댓값 힙)
+```cpp
+priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq; // priority_queue<자료형, 구현체, 비교 연산자>
+
+pq.push(make_pair(a, b));
+```
+
 ## deque
 
 * left와 right를 활용하여 크기비교
