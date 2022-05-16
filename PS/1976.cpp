@@ -9,13 +9,13 @@ int Find(int x){
 }
 
 void Union(int x, int y){
-	x=Find(y);
-	y=Find(x);
+	int a=Find(y);
+	int b=Find(x);
 	
-	if(x<y)
-		parent[y]=x;
+	if(a<b)
+		parent[b]=a;
 	else
-		parent[x]=y;
+		parent[a]=b;
 }
 
 int main(){
