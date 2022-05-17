@@ -14,3 +14,7 @@ cout.precision(4); // 소숫점 넷째자리까지
 
  * 제곱: ```#include<cmath> pow(double base, doulbe exponent);```
  * 제곱근: ```#include<cmath> sqrt(double num);```
+
+## 진수
+
+ * 16진수: &x

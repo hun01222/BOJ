@@ -1,4 +1,4 @@
-## DFS (nCn/2) 일 때
+## DFS n! 일 때
 
 ```cpp
 	for(int i=idx; i<n; i++){
