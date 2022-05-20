@@ -5,7 +5,7 @@
  
  ### 헤더파일
   
-  * ```include<bits/stdc++.h>```
+  ```include<bits/stdc++.h>```
 
 ## test case가 주어지지 않는 경우
 
@@ -26,4 +26,37 @@
 pair<int, int> arr[100];
 sort(arr, arr+n);
 arr[1].first, arr[1].second;
+```
+
+## 펠린드롬
+
+```cpp
+bool IsPalindrome(string str){
+	string front, back;
+	
+	front=str;
+	reverse(str.begin(), str.end());
+	back=str;
+	
+	if(front==back)
+		return true;
+	else
+		return false;
+}
+```
+
+## 소수를 구할 때 sqrt(n) 까지만 나누면 됨
+
+```cpp
+bool IsPrime(int num){
+	if(num<2)
+		return false;
+	
+	for(int i=2; i<=sqrt(num); i++){
+		if(num%i==0)
+			return false;
+	}
+	
+	return true;
+}
 ```
