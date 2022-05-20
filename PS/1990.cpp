@@ -2,7 +2,7 @@
 #include<vector>
 #include<cmath>
 #include<string>
-#define max 10000001
+#define max 100000001
 using namespace std;
 
 int main(){
@@ -13,22 +13,21 @@ int main(){
 	}
 	v[1]=0;
 	
-	int n;
-	cin >> n;
-	while(1){
-		if(v[n]){
-			string s=to_string(n);
+	int a, b;
+	cin >> a >> b;
+	while(a<=b){
+		if(v[a]){
+			string s=to_string(a);
 			int start=0, end=s.size()-1;
 			while(start<=end){
 				if(s[start]!=s[end])
 					break;
 				start++, end--;
 			}
-			if(start>=end){
-				cout << n;
-				return 0;
-			}	
+			if(start>=end)
+				cout << a << "\n";	
 		}
-		n++;
+		a++;
 	}
+	cout << -1;
 }
