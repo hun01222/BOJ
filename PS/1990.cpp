@@ -1,33 +1,46 @@
 #include<iostream>
-#include<vector>
+#include<algorithm>
 #include<cmath>
-#include<string>
-#define max 100000001
+#define max 10000001
 using namespace std;
 
-int main(){
-	vector<int> v(max, 1);
-	for(int i=2; i<=sqrt(max); i++){
-		for(int j=i*2; j<=max; j+=i)
-			v[j]=0;
-	}
-	v[1]=0;
+bool IsPrime(int num){
+	if(num<2)
+		return false;
 	
+	for(int i=2; i<=sqrt(num); i++){
+		if(num%i==0)
+			return false;
+	}
+	
+	return true;
+}
+
+bool IsPalindrome(string str){
+	string front, back;
+	
+	front=str;
+	reverse(str.begin(), str.end());
+	back=str;
+	
+	if(front==back)
+		return true;
+	else
+		return false;
+}
+
+int main(){
+	ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	cout.tie(0);
 	int a, b;
 	cin >> a >> b;
-	while(a<=b){
-		if(v[a]){
-			string s=to_string(a);
-			int start=0, end=s.size()-1;
-			while(start<=end){
-				if(s[start]!=s[end])
-					break;
-				start++, end--;
-			}
-			if(start>=end)
-				cout << a << "\n";	
-		}
-		a++;
+	
+	for(int i=a; i<=max; i++){
+		if(i>b)
+			break;
+		if(IsPalindrome(to_string(i))&&IsPrime(i))
+			cout << i << "\n";
 	}
 	cout << -1;
 }
