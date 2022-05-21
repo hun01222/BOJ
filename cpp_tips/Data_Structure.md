@@ -35,4 +35,30 @@ pq.push(make_pair(a, b));
 * 반복문에서 원소 참조 ```for(auto a=map.begin(); a!=map.end(); a++){string name=a->first; float n=a->second;}```
 * map을 배열처럼 이용 가능 ```map<string, int> ma; ma[temp]++;```
 
+## 공용체와 열거체
 
+### 공용체(Union)
+
+ * 모든 맴버 변수가 하나의 메모리 공간을 공유함
+ * 공용체는 한 번에 하나의 멤버 변수밖에 사용할 수 없음
+ 
+```cpp
+typedef union{
+    unsigned char a;
+    unsigned short b;
+    unsigned int c;
+}SHAREDATA;
+
+int main(void){
+	SHAREDATA var;
+	var.c = 0x12345678;  
+}
+```
+
+### 열거체(enumerated typed)
+
+ * 새로운 타입을 선언하면서 동시에 해당 타입이 가질 수 있는 정수형 상숫값도 같이 명시
+ 
+```cpp
+enum Weather{SUNNY = 0, CLOUD = 10, RAIN = 20, SNOW = 30};
+```
