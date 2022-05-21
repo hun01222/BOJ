@@ -45,7 +45,7 @@ bool IsPalindrome(string str){
 }
 ```
 
-## 소수를 구할 때 sqrt(n) 까지만 나누면 됨
+## 소수를 구할 때 $\sqrt{n}$ 까지만 나누면 됨
 
 ```cpp
 bool IsPrime(int num){
