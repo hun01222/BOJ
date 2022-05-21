@@ -9,3 +9,5 @@
 ## 내림차순 sorting
 
 * ```#include<fuctional> sort(v.begin(), v.end(), greater<>());```
+
+http://www.tcpschool.com/c/c_struct_unionEnum
