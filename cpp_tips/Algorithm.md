@@ -1,5 +1,3 @@
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-
 ## B-tree의 부모찾기
 
 * 2차원 백터 vector<int> v[max] 이용, DFS로 찾기
@@ -38,7 +36,7 @@ arr[1].first, arr[1].second;
  * V개의 정점과 음수가 아닌 E개의 간선을 가진 그래프 G에서 특정 출발 정점(S)에서 부터 다른 모든 정점까지의 최단경로를 구하는 알고리즘
 
  * 인접 행렬 방식
-	* 시간복잡도: $O(V^2)$, 공간복잡도: $O(V^2)$
+	* 시간복잡도: $`{O(V^2)}`$, 공간복잡도: $`{O(V^2)}`$
 
  1. D[S]=0 (출발점을 0으로 저장)
  2. 방문하지 않은 정점 중에서 D[K]가 최소인 정점 I 선택
