@@ -31,31 +31,18 @@ void BFS(int a, int b){
 	}
 }
 
-int main(){	
+int main(){
+	ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	cout.tie(0);
+	
 	while(1){
-		ans=0;
-		cin >> w >> h;
-		if(w==0&&h==0)
+		cin >> h >> w;
+		if(!w&&!h)
 			return 0;
-		for(int i=0; i<h; i++){
-			for(int j=0; j<w; j++)
-				cin >> map[j][i];
-		}
 		
-		for(int i=0; i<h; i++){
-			for(int j=0; j<w; j++){
-				if(map[j][i]==1&&!visited[j][i]){
-					visited[j][j]=true;
-					cout << j << ' ' << i << "\n";
-					ans++;
-					BFS(j, i);
-				}
-			}
-		}
-		
-		memset(map, 0, sizeof(map));
-		memset(visited, false, sizeof(visited));
-		
-		cout << ans << "\n";
+		for(int i=0; i<w; i++)
+			for(int j=0; j<h; j++)
+				cin >> map[i][j];
 	}
 }
