@@ -42,7 +42,7 @@ bool cmp(info x, info y){
 
 ### DFS
 
-* 처음에 여러개의 push가 있는 문제는 DFS로!
+* 처음에 여러개의 push가 있는 문제는 brute-force로!
 
 #### DFS combination 일 때
 
