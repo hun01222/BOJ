@@ -16,6 +16,63 @@ sort(arr, arr+n);
 arr[1].first, arr[1].second;
 ```
 
+### 여러가지 조건으로 정렬
+
+```cpp
+bool cmp(info x, info y){
+	if(x.a>y.a)
+		return true;
+	else if(x.a==y.a){
+		if(x.b<y.b)
+			return true;
+		else if(x.b==y.b){
+			if(x.c>y.c)
+				return true;
+			else if(x.c==y.c)
+				if(x.d<y.d)
+					return true;
+				
+		}
+	}
+	return false;
+}
+```
+
+## DFS&BFS
+
+### DFS
+
+* 처음에 여러개의 push가 있는 문제는 DFS로!
+
+#### DFS combination 일 때
+
+```cpp
+for(int i=idx; i<n; i++){
+	if(team[i])
+		continue;
+	else{
+		team[i]=true;
+		DFS(cnt+1, i);
+		team[i]=false;
+	}
+}
+
+#### DFS n! 일 때
+//next_permutation 사용
+#include<algorithm>
+
+for(int i=0; i<4; i++)
+	v[i]=1;
+
+do{
+	for(int i=0; i<4; i++)
+		cout << v[i] << " ";
+	cout << "\n";
+}while(next_permutation(v.begin(), v.end()));
+```
+
+### BFS
+
 ## 최단 경로 알고리즘
 
 ### 최단 경로 문제의 종류
