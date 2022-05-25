@@ -38,10 +38,10 @@ int main(){
 	}
 	
 	memset(visited, false, sizeof(visited));
-	DFS(1, 0);
+	DFS(1, 0); // root로 부터 가장 먼 node를 찾고
 	memset(visited, false, sizeof(visited));
 	dia=0;
-	DFS(farthest_node, 0);
+	DFS(farthest_node, 0); // dia를 찾음
 	
 	cout << dia;
 }
