@@ -49,7 +49,7 @@ int main(){
 			tree[node2].push_back(node1);
 		}
 		
-		cout << "Case" << cnt++ << ": ";
+		cout << "Case " << cnt++ << ": ";
 		
 		int result=0;
 		for(int i=1; i<=n; i++)
