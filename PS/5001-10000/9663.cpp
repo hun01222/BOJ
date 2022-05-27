@@ -1,31 +1,36 @@
 #include<iostream>
-#include<vector>
 using namespace std;
 
-int n, ans=0;
+int n, cnt=0;
+int arr[16]; // column만 백트레킹 하면 됨
 
-void DFS(int cnt, int idx){
-	if(cnt==n*n){
-		if(IsPossible())
-			ans++;
-		return;
-	}
+bool IsPossible(int i){
+	int k=1;
+	bool flag=true;
 	
-	for(int i=idx; i<n*n; i++){
-		if(arr[i])
-			continue;
-		else{
-			arr[i]=true;
-			DFS(cnt+1, i);
-			arr[i]=false;
-		}
+	while((k<i)&&flag){
+		if(arr[i]==arr[k]||abs(arr[i]-arr[k])==i-k)
+			flag=false;
+		k++;
+	}
+	return flag;
+}
+
+void DFS(int i){
+	if(IsPossible(i)){
+		if(i==n)
+			cnt++;
+		else
+			for(int j=1; j<=n; j++){
+				arr[i+1]=j;
+				DFS(i+1);
+			}
 	}
 }
 
-bool IsPossible(){
-	
-}
-	
 int main(){
 	cin >> n;
+	
+	DFS(0);
+	cout << cnt << "\n";
 }

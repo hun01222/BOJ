@@ -70,6 +70,7 @@ do{
 	cout << "\n";
 }while(next_permutation(v.begin(), v.end()));
 ```
+ * 숫자가 같으면 작동하지 않는 듯 하다..?
 
 ### BFS
 
