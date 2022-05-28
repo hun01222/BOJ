@@ -19,4 +19,3 @@
 ## 포인터 참조
 
  * call by referecne: ```int &ret=dp[i][j];```
- 
