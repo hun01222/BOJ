@@ -7,14 +7,14 @@
 using namespace std;
 
 vector<pair<int, int>> graph[max];
-int V, E, start, v1, v2;
+int V, E, start, v1, v2, ans1=0, ans2=0;
+int dist[max];
 
-vector<int> dijkstra(int start, int vertex){
-	vector<int> dist(vertex, INF);
-	dist[start]=0;
-	
+void dijkstra(int start){
 	priority_queue<pair<int, int>> pq;
+	
 	pq.push(make_pair(0, start));
+	dist[start]=0;
 	
 	while(!pq.empty()){
 		int d=-pq.top().first;
@@ -32,7 +32,6 @@ vector<int> dijkstra(int start, int vertex){
 			}
 		}
 	}
-	return dist;
 }
 
 int main(){
@@ -49,13 +48,28 @@ int main(){
 	}
 	cin >> v1 >> v2;
 	
-	vector<int> result=dijkstra(1, V+1);
-	vector<int> temp1=dijkstra(v1, V+1);
-	vector<int> temp2=dijkstra(v2, V+1);
+	fill_n(dist, max, INF);
+	dijkstra(1);
+	ans1+=dist[v1];
+	fill_n(dist, max, INF);
+	dijkstra(v1);
+	ans1+=dist[v2];
+	fill_n(dist, max, INF);
+	dijkstra(v2);
+	ans1+=dist[V];
 	
-	int ans=min((result[v1]+temp1[v2]+temp2[V]), (result[v2]+temp2[v1]+temp1[V]));
-	if(ans>=INF||ans<0)
+	fill_n(dist, max, INF);
+	dijkstra(1);
+	ans2+=dist[v2];
+	fill_n(dist, max, INF);
+	dijkstra(v2);
+	ans2+=dist[v1];
+	fill_n(dist, max, INF);
+	dijkstra(v1);
+	ans2+=dist[V];
+	
+	if(min(ans1, ans2)<0 || min(ans1, ans2)>=INF)
 		cout << -1;
 	else
-		cout << ans;
+		cout << min(ans1, ans2);
 }
