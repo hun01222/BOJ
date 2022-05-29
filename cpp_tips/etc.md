@@ -13,7 +13,11 @@
 
 ## 초기화
 
- * 배열 한번에 초기화: ```#include<algorithm> fill(arr, arr+n; 1) // size=n 인 arr을 1로 초기화```
+ * 배열 한번에 초기화
+ ```cpp
+ #include<algorithm> fill(arr, arr+n; 1) // size=n 인 arr을 1로 초기화
+ fill_n(arr, n, 1) // size=n인 arr을 1로 초기화
+ ```
  * 메모리 한번에 초기화: ```#include<memory.h> memset(dp, -1, sizeof(dp))```
 
 ## 포인터 참조
