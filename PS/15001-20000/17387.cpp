@@ -24,7 +24,15 @@ bool IsLineSegmentIntersection(coordinate A, coordinate B, coordinate C, coordin
 	int AB=ccw(A, B, C)*ccw(A, B, D);
 	int CD=ccw(C, D, A)*ccw(C, D, B);
 	
-	return (AB<0)&&(CD<0);
+	if(AB==0&&CD==0){
+		if(A.x<B.x)
+			swap(A.x, B.x);
+		if(C.x<D.x)
+			swap(C.x, D.x);
+		return (C.x>=B.x)&&(A.x>=D.x);
+	}
+	
+	return (AB<=0)&&(CD<=0);
 }
 
 int main(){
