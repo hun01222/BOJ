@@ -22,15 +22,16 @@ int BFS(){
 				while(!q.empty()){
 					int x=q.front().first;
 					int y=q.front().second;
-					visited[x][y]=1;
 					q.pop();
 					
 					for(int i=0; i<8; i++){
 						int x1=x+dx[i];
 						int y1=y+dy[i];
 						
-						if((0<x1&&x1<=w&&0<y1&&y1<=h)&&!visited[x1][y1]&&map[x1][y1])
+						if((0<x1&&x1<=w&&0<y1&&y1<=h)&&!visited[x1][y1]&&map[x1][y1]){
 							q.push(make_pair(x1, y1));
+							visited[x1][y1]=1;
+						}
 					}
 				}
 			}
