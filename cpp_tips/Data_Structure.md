@@ -2,6 +2,7 @@
 
 * 함수의 input이 vector인 경우 ```vector<int> &vect // call by reference로 해야 됨```
 * ``` vector<int> v(0,2) ```와 ``` vector<int> v[2] ``` 는 모두 2차원 백터(벡터의 배열)을 초기화한다.
+* unique와 erase를 이용하여 중복되는 원소 지우기 ```v.erase(unique(v.begin(), v.end()), v.end());```
 ## queue
 
 * 큐를 비우기 ```while(!q.empty()) q.pop()```
