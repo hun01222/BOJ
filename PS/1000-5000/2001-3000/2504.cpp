@@ -1,51 +1,49 @@
 #include<iostream>
-#include<list>
+#include<stack>
 #include<string>
 using namespace std;
 
 int main(){
-	ios_base::sync_with_stdio(0);
-	cin.tie(0);
-	cout.tie(0);
-	
-	list<char> l;
+	int ans=0, temp=1;
+	stack<char> st;
 	string s;
 	cin >> s;
-	int s_length=s.size();
-	for(int i=0; i<s_length; i++){
-		l.push_back(s[i]);
-	}
-	list<char>::iterator iter=l.end();
 	
-	int n;
-	char c;
-	cin >> n;
-	while(n--){
-		cin >> c;
-		if(c=='L'){
-			if(iter==l.begin())
-				continue;
-			else
-				iter--;
+	for(int i=0; i<s.size(); i++){
+		if(s[i]=='('){
+			temp*=2;
+			st.push('(');
 		}
-		else if(c=='D'){
-			if(iter==l.end())
-				continue;
-			else
-				iter++;
+		else if(s[i]=='['){
+			temp*=3;
+			st.push('[');
 		}
-		else if(c=='B'){
-			if(iter==l.begin())
-				continue;
-			else
-				iter=l.erase(--iter);
+		else if(s[i]==')'&&(st.empty()||st.top()!='(')){
+			cout << 0;
+			return 0;
 		}
-		else if(c=='P'){
-			cin >> c;
-			l.insert(iter, c);
+		else if(s[i]==']'&&(st.empty()||st.top()!='[')){
+			cout << 0;
+			return 0;
+		}
+		else if(s[i]==')'){
+			if(s[i-1]=='(')
+				ans+=temp;
+			st.pop();
+			temp/=2;
+		}
+		else if(s[i]==']'){
+			if(s[i-1]=='[')
+				ans+=temp;
+			st.pop();
+			temp/=3;
 		}
 	}
 	
-	for(auto a : l)
-		cout << a;
+	if(!st.empty()){
+		cout << 0;
+		return 0;
+	}
+	
+	cout << ans;
 }
