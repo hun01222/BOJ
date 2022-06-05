@@ -1,47 +1,32 @@
 #include<iostream>
 #include<string>
-#include<algorithm>
+#define MAX 200002
 using namespace std;
 
-// end -> start
-// asdf s 0 1 안됨
+int sum[MAX][26]={0, };
+
 int main(){
-	string s;
-	int n, temp_start=0, temp_end=0;
-	int arr[26][3]={0, };
-	cin >> s >> n;
-	arr[s[0]-97][0]++;
+	ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	cout.tie(0);
 	
-	while(n--){
-		int start, end;
-		char alpha;
-		cin >> alpha >> end >> start;
+	string s;
+	cin >> s;
+	
+	for(int i=0; i<s.size(); i++){
+		if(i!=0)
+			for(int j=0; j<26; j++)
+				sum[i+1][j]=sum[i][j];
+		sum[i+1][s[i]-'a']++;
+	}
+	
+	int t;
+	cin >> t;
+	while(t--){
+		char temp;
+		int a, b;
+		cin >> temp >> a >> b;
 		
-		temp_start=arr[alpha-97][1];
-		temp_end=arr[alpha-97][2];
-		arr[alpha-97][1]=start;
-		arr[alpha-97][2]=end;
-		
-		if(temp_start<start){
-			for(int i=temp_start+1; i<=start; i++){
-				arr[s[i]-97][0]++;
-			}
-		}
-		if(temp_end>end){
-			for(int i=temp_end-1; i>=end; i--){
-				arr[s[i]-97][0]++;
-			}
-		}
-		if(temp_start>start){
-			for(int i=temp_start; i>start; i--){
-				arr[s[i]-97][0]--;
-			}
-		}
-		if(temp_end<end){
-			for(int i=temp_end; i<end; i++){
-				arr[s[i]-97][0]--;
-			}
-		}
-		cout << arr[alpha-97][0] << "\n";
+		cout << sum[b+1][temp-'a']-sum[a][temp-'a'] << "\n";
 	}
 }

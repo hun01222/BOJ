@@ -3,8 +3,6 @@
 typedef long long ll;
 using namespace std;
 
-vector<ll> v;
-
 int main(){
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
@@ -12,7 +10,8 @@ int main(){
 	
 	int n, m;
 	cin >> n >> m;
-	
+
+	vector<ll> v(n, 0);
 	ll ans=0, sum=0;
 	for(int i=0; i<n; i++){
 		int temp;
