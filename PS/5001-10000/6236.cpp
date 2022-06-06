@@ -1,27 +1,29 @@
 #include<iostream>
-#define MAX 1000001
-typedef long long ll;
 using namespace std;
 
-int n, m, arr[MAX]={0, };
+int n, m, arr[100001]={0, };
 
 bool check(int mid){
-	ll sum=0;
-	for(int i=0; i<n; i++)
-		if(arr[i]>mid)
-			sum+=(arr[i]-mid);
-	return sum>=m;
+	int cnt=1, temp=mid;
+	for(int i=0; i<n; i++){
+		if(mid<arr[i])
+			return false;
+		
+		if(temp-arr[i]<0){
+			cnt++;
+			temp=mid;
+		}
+		temp-=arr[i];
+	}
+	return cnt<=m;
 }
 
 int main(){
-	ios_base::sync_with_stdio(0);
-	cin.tie(0);
-
 	cin >> n >> m;
 	for(int i=0; i<n; i++)
 		cin >> arr[i];
 	
-	int lo=0, hi=1e9;
+	int lo=1, hi=1e4;
 	while(lo+1<hi){
 		int mid=(lo+hi)/2;
 		if(check(mid))
@@ -29,6 +31,6 @@ int main(){
 		else
 			hi=mid;
 	}
-
+	
 	cout << lo;
 }

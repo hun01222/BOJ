@@ -38,7 +38,22 @@ bool cmp(info x, info y){
 }
 ```
 
-## DFS&BFS
+## Search algorithm
+
+### parametic search
+
+```cpp
+int lo=0, hi=1e9;
+while(lo+1<hi){
+	int mid=(lo+hi)/2;
+	if(check(mid))
+		lo=mid;
+	else
+		hi=mid;
+}
+```
+
+## DFS
 
 ### DFS
 
@@ -71,9 +86,7 @@ do{
 }while(next_permutation(v.begin(), v.end()));
 ```
  * 숫자가 같으면 작동하지 않는 듯 하다..?
-
-### BFS
-
+ 
 ## 최단 경로 알고리즘
 
 ### 최단 경로 문제의 종류
