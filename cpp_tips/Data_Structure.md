@@ -34,6 +34,11 @@ pq.push(make_pair(a, b));
 
 * 반복문에서 원소 참조 ```for(auto a=map.begin(); a!=map.end(); a++){string name=a->first; float n=a->second;}```
 * map을 배열처럼 이용 가능 ```map<string, int> ma; ma[temp]++;```
+* ```m.insert(make_pair(key, value));```
+
+## set
+
+* ```s.insert(k);```
 
 ## 공용체와 열거체
 

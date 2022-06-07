@@ -23,3 +23,18 @@
 ## 포인터 참조
 
  * call by referecne: ```int &ret=dp[i][j];```
+ 
+## pair, tuple
+
+```cpp
+// pair
+vector<pair<int, int>> v;
+v.push_back(make_pair(6, 5));
+cout << v[0].fisrt << ' ' << v[0].second;
+
+// tuple
+#include<tuple>
+vector<tuple<int, int, int>> v;
+v.push_back(make_tuple(1, 2, 3));
+cout << get<0>(v[0]) << ' ' << get<1>(v[0]) << ' ' << get<2>(v[0]);
+```
