@@ -3,7 +3,7 @@
  * 공백 포함하여 입력 ``` string s; getline(cin, s);```
  * 개행 포함하여 입력 ```	while(getline(cin, s)) {}```
  * 파일 끝까지 입력 ```while(cin>>x)```
- * 버퍼 지우기 ```cin.ignore() // 맨 앞의 문자 하나만 지운다.```
+ * 버퍼 지우기 ```cin.ignore() // 맨 앞의 문자 하나만 지운다, 테스트 케이스를 받는 등 버퍼를 비워줘야함```
  
  ## ```#include<string.h>``` 관련 함수
  
