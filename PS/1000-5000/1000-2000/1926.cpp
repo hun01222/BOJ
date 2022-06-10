@@ -15,12 +15,14 @@ void BFS(int x, int y){
 	
 	queue<pair<int, int>> q;
 	q.push(make_pair(x, y));
+	map[x][y]=0;
 	int temp_ans=0;
 	
 	while(!q.empty()){
 		int x1=q.front().first;
 		int y1=q.front().second;
 		q.pop();
+		temp_ans++;
 		
 		for(int i=0; i<4; i++){
 			int x2=x1+dx[i];
@@ -29,7 +31,6 @@ void BFS(int x, int y){
 			if(0<=x2&&x2<n&&0<=y2&&y2<m&&map[x2][y2]){
 				q.push(make_pair(x2, y2));
 				map[x2][y2]=0;
-				temp_ans++;
 			}
 		}
 	}
@@ -38,7 +39,7 @@ void BFS(int x, int y){
 }
 
 int main(){
-	cin >> m >> n;
+	cin >> n >> m;
 	for(int i=0; i<n; i++)
 		for(int j=0; j<m; j++){
 			bool temp;
