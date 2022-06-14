@@ -1,32 +1,29 @@
 #include<iostream>
-#include<utility>
 #define MOD 1000000007
 typedef long long ll;
 using namespace std;
 
-int GCD(int a, int b){
-	if(a%b==0)
-		return b;
-	return GCD(b, a%b);
-}
-
-pair<int, int> sum(pair<int, int> &p1, pair<int, int> &p2){
-	
-	
-	return p1;
+ll power(ll n, ll m){
+	ll ans=1;
+	while(m){
+		if(m&1)
+			ans=ans*n%MOD;
+		m/=2;
+		n=n*n%MOD;
+	}
+	return ans;
 }
 
 int main(){
-	int n, temp1, temp2;
-	pair<int, int> p1;
-	pair<int, int> p2;
+	int n;
+	cin >> n;
+	ll ans=0;
 	
-	cin >> n >> temp1 >> temp2;
-	p1={temp1, temp2};
-	for(int i=1; i<n; i++){
-		cin >> temp1 >> temp2;
-		p2={temp1, temp2};
-		
-		p1=sum(p1, p2);
+	while(n--){
+		int x, y;
+		cin >> x >> y;
+		ans+=(y*power(x, MOD-2))%MOD;
 	}
+	
+	cout << ans%MOD;
 }
