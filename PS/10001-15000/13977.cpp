@@ -1,9 +1,9 @@
 #include<iostream>
+#define MOD 1000000007
 typedef long long ll;
 using namespace std;
 
-const ll MOD=1000000007;
-ll factorial[4000001];
+ll factorial[4000005];
 
 ll power(ll n, ll m){
 	ll ans=1;
@@ -22,20 +22,18 @@ int main(){
 	cout.tie(0);
 	
 	factorial[0]=1;
-	for(int i=1; i<400000; i++)
-		factorial[i]=factorial[i-1]i%MOD;
+	for(int i=1; i<400005; i++)
+		factorial[i]=factorial[i-1]*i%MOD;
 	
 	int t;
 	cin >> t;
 	while(t--){
-		ll n, k, a=1, b=1;
+		ll n, k;
 		cin >> n >> k;
 		
-		for(int i=n; i>=n-k+1; i--)
-			a=(a*i)%MOD;
-		for(int i=1; i<=k; i++)
-			b=(b*i)%MOD;
+		ll p=factorial[n];
+		ll q=(factorial[k]*factorial[n-k])%MOD;
 		
-		cout << (a*power(b, MOD-2))%MOD << "\n";
+		cout << (p*(power(q, MOD-2)%MOD))%MOD << "\n";
 	}
 }

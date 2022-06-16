@@ -22,12 +22,27 @@ bool IsPrime(int num){
 	if(num<2)
 		return false;
 	
-	for(int i=2; i<=sqrt(num); i++){
+	for(int i=2; i*i<=num; i++){
 		if(num%i==0)
 			return false;
 	}
 	
 	return true;
+}
+```
+
+## D&C와 bitmarking을 이용한 거듭제곱
+
+```cpp
+ll power(ll n, ll m){
+	ll ans=1;
+	while(m){
+		if(m&1) // m이 홀수이면
+			ans=ans*n%MOD;
+		m/=2;
+		n=n*n%MOD;
+	}
+	return ans;
 }
 ```
 
@@ -95,4 +110,18 @@ matrix power(matrix a, ll n){
 	
 	return res;
 }
+```
+
+## Eulur phi function
+
+```cpp
+	ll ans=n;
+	for(ll i=2; i<=sqrt(n); i++){
+		if(n%i==0)
+			ans=ans/i*(i-1);
+		while(n%i==0)
+			n/=i;
+	}
+	if(n!=1)
+		ans=ans/n*(n-1);
 ```
