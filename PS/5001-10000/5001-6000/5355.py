@@ -1,4 +1,4 @@
-t = input()
+t = int(input())
 
 for _ in range(t):
   a = list(input().split(' '))
@@ -10,4 +10,4 @@ for _ in range(t):
       ans += 5
     elif i == '#':
       ans -= 7
-  print(round(ans, 2))
+  print("%0.2f" % ans)
