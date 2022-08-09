@@ -46,6 +46,17 @@ ll power(ll n, ll m){
 }
 ```
 
+## 완전제곱 판별 알고리즘
+
+```cpp
+bool IsSquare(int n){
+	root=(int)sqrt(n);
+	if(root*root==n)
+		return true;
+	return false;
+}
+```
+
 # 정수론 관련 알고리즘
 
 ## Euclid algorithm
