@@ -136,3 +136,31 @@ matrix power(matrix a, ll n){
 	if(n!=1)
 		ans=ans/n*(n-1);
 ```
+
+## 약수 관련
+
+### 약수의 합 구하기
+
+```py
+# N 이하의 자연수 중에서 i 를 약수로 갖는 개수는 N/i 개이다.
+
+ans = 0
+for i in range(1, n + 1):
+	ans += (n // i) * i
+```
+
+### 약수 구하기 O(n*root(n))
+
+```py
+def GetDivisor(n):
+  divisors_list = []
+  
+  for i in range(1, int(n**(1/2)) + 1):
+    if n % i == 0:
+      divisors_list.append(i)
+      if i**2 != n:
+        divisors_list.append(n // i)
+  divisors_list.sort()
+  
+  return divisors_list
+```
