@@ -164,3 +164,14 @@ def GetDivisor(n):
   
   return divisors_list
 ```
+
+## 중국인의 나머지 정리 예시 (6064 카잉 달력)
+
+```py
+def check(m, n, x, y):
+  while x <= m * n:
+    if (x - y) % n == 0:
+    	return x
+    x += m
+  return -1
+```

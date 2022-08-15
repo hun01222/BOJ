@@ -17,5 +17,12 @@ while True:
 ## 2차원 배열의 입력
 
 ```py
-arr = [list(input()) for _ in range(n)]
+arr = [list(map(int, input().split())) for _ in range(n)]
+```
+
+## input 이 많으면
+
+```py
+import sys
+sys.stdin.readline
 ```
