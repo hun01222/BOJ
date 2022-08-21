@@ -24,5 +24,5 @@ arr = [list(map(int, input().split())) for _ in range(n)]
 
 ```py
 import sys
-sys.stdin.readline
+input = sys.stdin.readline
 ```
