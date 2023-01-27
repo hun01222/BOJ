@@ -2,6 +2,10 @@
 #include<algorithm>
 using namespace std;
 
+int sol(int p, int r, int c){
+	
+}
+
 int main(){
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
@@ -21,7 +25,7 @@ int main(){
 	while(m--){
 		int p, r, c;
 		cin >> p >> r >> c;
-		ans=max(ans, (c+sum[n-1]-1-sum[p-1])%sum[n-1]+(sum[p-1]-sum[r-1])%sum[n-1]);
+		ans=max(ans, sol(p, r, c));
 	}
 	
 	cout << ans;
