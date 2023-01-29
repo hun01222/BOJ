@@ -3,7 +3,7 @@
 using namespace std;
 
 int sol(int p, int r, int c){
-	
+	return 0;
 }
 
 int main(){
@@ -14,18 +14,20 @@ int main(){
 	int n, m, ans=0;
 	cin >> n >> m;
 	
-	int sum[n]={0, };
-	cin >> sum[0];
-	for(int i=1; i<n; i++){
+	int sum[n+1]={0, };
+	for(int i=0; i<n; i++){
 		int temp;
 		cin >> temp;
-		sum[i]+=(sum[i-1]+temp);
+		sum[i+1]+=(sum[i]+temp);
 	}
+	sum[0]=sum[n];
 	
 	while(m--){
 		int p, r, c;
 		cin >> p >> r >> c;
-		ans=max(ans, sol(p, r, c));
+		
+		cout << sum[n]*((c-sum[p]+sum[n]-1)/sum[n])+sum[r-1] << ' ';
+		//ans=max(ans, sol(p, r, c));
 	}
 	
 	cout << ans;

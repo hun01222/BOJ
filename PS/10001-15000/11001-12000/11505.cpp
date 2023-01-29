@@ -1,6 +1,5 @@
 #include<iostream>
 #include<vector>
-#include<cmath>
 #define MOD 1000000007
 typedef long long ll;
 using namespace std;
@@ -12,14 +11,16 @@ ll init(vector<ll> &a, vector<ll> &tree, int node, int start, int end){
 		return tree[node]=(init(a, tree, node*2, start, (start+end)/2)*init(a, tree, node*2+1, (start+end)/2+1, end))%MOD;
 }
 
-void update(vector<ll> &tree, int node, int start, int end, int index, ll diff){
+void update(vector<ll> &tree, int node, int start, int end, int index, ll value){
 	if(index<start||index>end)
 		return;
-	tree[node]*=diff;
-	if(start!=end){
-		update(tree, node*2, start, (start+end)/2, index, diff);
-		update(tree, node*2+1, (start+end)/2+1, end, index, diff);
+	if(start==end){
+		tree[node]=value;
+		return;
 	}
+	update(tree, node*2, start, (start+end)/2, index, value);
+	update(tree, node*2+1, (start+end)/2+1, end, index, value);
+	tree[node]=(tree[node*2]*tree[node*2+1])%MOD;
 }
 
 ll product(vector<ll> &tree, int node, int start, int end, int left, int right){
@@ -37,31 +38,25 @@ int main(){
 	
 	int n, m, k;
 	cin >> n >> m >> k;
-	vector<ll> a(n);
-	int h=(int)ceil(log2(n));
-	int tree_size=(1<<(h+1));
-	vector<ll> tree(tree_size);
+	vector<ll> a(n+1);
+	vector<ll> tree(n*4);
 	m+=k;
-	for(int i=0; i<n; i++)
+	for(int i=1; i<=n; i++)
 		cin >> a[i];
-	init(a, tree, 1, 0, n-1);
+	init(a, tree, 1, 1, n);
 	
 	while(m--){
 		int t1;
 		cin >> t1;
 		if(t1==1){
-			int t2;
-			ll t3;
+			ll t2, t3;
 			cin >> t2 >> t3;
-			t2-=1;
-			ll diff=t3/a[t2];
-			a[t2]=t3;
-			update(tree, 1, 0, n-1, t2, diff);
+			update(tree, 1, 1, n, t2, t3);
 		}
 		else if(t1==2){
 			int t2, t3;
 			cin >> t2 >> t3;
-			cout << product(tree, 1, 0, n-1, t2-1, t3-1) << "\n";
+			cout << product(tree, 1, 1, n, t2, t3) << "\n";
 		}
 	}
 }
