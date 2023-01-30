@@ -2,6 +2,7 @@
 
  * 타입: ```typedef long long ll;```
  * 상수: ```#define mod 9901```
+ * 1e9 = 1000000000
  
  ### 헤더파일
   
