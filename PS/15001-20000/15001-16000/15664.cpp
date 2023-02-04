@@ -7,15 +7,15 @@ using namespace std;
 
 int n, m;
 int visit[MAX]={false, };
-int arr[MAX]={0, };
+int ans[MAX]={0, };
 int input[MAX]={0, };
-set<vector<int>> s;
+set<vector<int>> s; //set은 내림차순 정렬 위해
 
 void DFS(int cnt, int idx){
 	if(cnt==m){
 		vector<int> v;
 		for(auto i=0; i<m; i++)
-			v.push_back(arr[i]);
+			v.push_back(ans[i]);
 		s.insert(v);
 	}
 	
@@ -23,7 +23,7 @@ void DFS(int cnt, int idx){
 		if(visit[i])
 			continue;
 		visit[i]=true;
-		arr[cnt]=input[i];
+		ans[cnt]=input[i];
 		DFS(cnt+1, i);
 		visit[i]=false;
 	}
@@ -39,8 +39,8 @@ int main(){
 	DFS(0, 0);
 	
 	for(auto v:s){
-		for(auto ans:v)
-			cout << ans << ' ';
+		for(auto a:v)
+			cout << a << ' ';
 		cout << "\n";
 	}
 }
